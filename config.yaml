@@ -1,0 +1,33 @@
+projects:
+  - name: coolgame-api
+    harbor_repo: harbor.coolgame.io/coolgame/api
+    chart: coolgame-api
+    environments:
+      - name: dev
+        cluster: dev-cluster
+        namespaces:
+          - coolgame-dev
+      - name: prod
+        cluster: prod-cluster
+        namespaces:
+          - coolgame-prod
+
+  - name: user-center
+    harbor_repo: harbor.coolgame.io/coolgame/user-center
+    chart: user-center
+    environments:
+      - name: dev
+        cluster: dev-cluster
+        namespaces:
+          - user-dev
+      - name: prod
+        cluster: prod-cluster
+        namespaces:
+          - user-prod
+
+clusters:
+  - name: dev-cluster
+    helm_api: http://helm-api.dev.coolgame.io
+
+  - name: prod-cluster
+    helm_api: http://helm-api.prod.coolgame.io
