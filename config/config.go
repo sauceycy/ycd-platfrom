@@ -4,7 +4,7 @@ import (
 	"os"
 
 	"gopkg.in/yaml.v3"
-	"ops-cd-platform/model"
+	"ycd-platform/model"
 )
 
 type Config struct {

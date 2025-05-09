@@ -5,8 +5,8 @@ import (
 	"os"
 
 	"github.com/gofiber/fiber/v2"
-	"ops-cd-platform/api"
-	"ops-cd-platform/config"
+	"ycd-platform/api"
+	"ycd-platform/config"
 )
 
 func main() {

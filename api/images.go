@@ -7,7 +7,7 @@ import (
     "strings"
 
     "github.com/gofiber/fiber/v2"
-    "ops-cd-platform/config"
+    "ycd-platform/config"
 )
 
 // GetImages 实时从 Harbor 获取最近 10 个镜像 tag

@@ -2,7 +2,8 @@ package api
 
 import (
     "github.com/gofiber/fiber/v2"
-    "ops-cd-platform/config"
+    "ycd-platform/config"
+    "ycd-platform/model"
 )
 
 // GetConfig 获取当前配置

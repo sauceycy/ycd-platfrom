@@ -1,5 +1,7 @@
-package apiimport (	"github.com/gofiber/fiber/v2"
-	"ops-cd-platform/config"
+package api
+
+import (	"github.com/gofiber/fiber/v2"
+	"ycd-platform/config"
 )
 
 // GetClusters 返回 Kubernetes 集群列表

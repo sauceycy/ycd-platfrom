@@ -1,4 +1,4 @@
-module github.com/sauceycy/ycd-platfrom
+module ycd-platform
 
 go 1.24.2
 

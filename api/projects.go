@@ -2,7 +2,7 @@ package api
 
 import (
     "github.com/gofiber/fiber/v2"
-    "ops-cd-platform/config"
+    "ycd-platform/config"
 )
 
 // GetProjects 返回所有项目列表
