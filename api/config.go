@@ -13,7 +13,7 @@ func GetConfig(c *fiber.Ctx) error {
 
 // UpdateProjectConfig 更新项目配置
 func UpdateProjectConfig(c *fiber.Ctx) error {
-    var updatedProject config.Project
+    var updatedProject model.Project // 修改为 model.Project
     if err := c.BodyParser(&updatedProject); err != nil {
         return ErrorResponse(c, fiber.StatusBadRequest, "invalid request body")
     }
@@ -39,7 +39,7 @@ func UpdateProjectConfig(c *fiber.Ctx) error {
 
 // AddProjectConfig 添加新项目
 func AddProjectConfig(c *fiber.Ctx) error {
-    var newProject config.Project
+    var newProject model.Project // 修改为 model.Project
     if err := c.BodyParser(&newProject); err != nil {
         return ErrorResponse(c, fiber.StatusBadRequest, "invalid request body")
     }
