@@ -5,6 +5,7 @@ import (
 	"os"
 
 	"github.com/gofiber/fiber/v2"
+	"github.com/gofiber/fiber/v2/middleware/cors" // 引入 CORS 中间件
 	"ycd-platform/api"
 	"ycd-platform/config"
 )
@@ -25,11 +26,11 @@ func main() {
 	// 2. 初始化 Fiber
 	app := fiber.New()
 
-	// 3. 日志中间件
-	app.Use(func(c *fiber.Ctx) error {
-		log.Printf("➡️ 请求: %s %s", c.Method(), c.Path())
-		return c.Next()
-	})
+	// 3. 启用 CORS 中间件
+	app.Use(cors.New(cors.Config{
+		AllowOrigins: "http://localhost:3000", // 允许的前端地址
+		AllowMethods: "GET,POST,PUT,DELETE",   // 允许的 HTTP 方法
+	}))
 
 	// 4. 注册 API 路由
 	apiGroup := app.Group("/api")

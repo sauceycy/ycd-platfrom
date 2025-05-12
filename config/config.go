@@ -8,8 +8,12 @@ import (
 )
 
 type Config struct {
-	Projects []model.Project `yaml:"projects"`
-	Clusters []model.Cluster `yaml:"clusters"`
+	Projects   []model.Project `yaml:"projects"`
+	Clusters   []model.Cluster `yaml:"clusters"`
+	HarborAuth struct {
+		Username string `yaml:"username"`
+		Password string `yaml:"password"`
+	} `yaml:"harbor_auth"`
 }
 
 var Global Config

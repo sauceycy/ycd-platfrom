@@ -1,7 +1,7 @@
 projects:
-  - name: coolgame-api
-    harbor_repo: harbor.coolgame.io/coolgame/api
-    chart: coolgame-api
+  - name: jdk8-web
+    harbor_repo: hub.dream22.xyz
+    chart: jdk8-web
     environments:
       - name: dev
         cluster: dev-cluster
@@ -12,18 +12,9 @@ projects:
         namespaces:
           - coolgame-prod
 
-  - name: user-center
-    harbor_repo: harbor.coolgame.io/coolgame/user-center
-    chart: user-center
-    environments:
-      - name: dev
-        cluster: dev-cluster
-        namespaces:
-          - user-dev
-      - name: prod
-        cluster: prod-cluster
-        namespaces:
-          - user-prod
+harbor_auth:
+  username: "admin"
+  password: "YCb7WdB9dafp3UgX"
 
 clusters:
   - name: dev-cluster

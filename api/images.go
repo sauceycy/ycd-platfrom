@@ -62,7 +62,10 @@ func fetchHarborTags(project, repo string) ([]string, error) {
         return nil, fmt.Errorf("failed to create request: %v", err)
     }
 
-    req.SetBasicAuth("robot$username", "robot$password") // TODO: 替换为真实认证
+    // 从配置中读取认证信息
+    username := config.Global.HarborAuth.Username
+    password := config.Global.HarborAuth.Password
+    req.SetBasicAuth(username, password)
 
     resp, err := http.DefaultClient.Do(req)
     if err != nil {
